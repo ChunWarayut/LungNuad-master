@@ -1,0 +1,104 @@
+<!--
+  Generated template for the MenuListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+
+  <ion-navbar color="boa">
+    <ion-title>menuList</ion-title>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+
+    <ion-buttons end>
+      <button navPush="MenuListAddPage" ion-button>
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <!-- Refresh -->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="Pull to refresh"
+        refreshingSpinner="circles">
+      </ion-refresher-content>
+      <!-- refreshingText="Refreshing...">
+      </ion-refresher-content>-->
+    </ion-refresher>
+    <!--  
+    <ion-grid>
+    <ion-row>
+    
+      
+        <ion-col col-6   *ngFor="let food of FoodList$ | async" detail-push navPush="MenuListEditPage" [navParams]="{item: item}">
+    -->
+    <ion-grid>
+        <ion-row>
+          <ion-col align="center" col-6 *ngFor="let food of FoodList$ | async" detail-push navPush="MenuListEditPage" [navParams]="{food: food}">
+
+    <ion-card > 
+<!--
+      <img height="100" width="100" src="https://firebasestorage.googleapis.com/v0/b/lungnuad-a547e.appspot.com/o/images%2F{{food.FOOD_IMG}}.jpg?alt=media&token=b934ec8f-234a-47cf-9d6a-4b5376fdb8d8">
+-->
+<!--
+
+  <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h1></h1>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+-->
+    
+    
+      
+      <ion-item>
+          <ion-label align="center">
+              <img src="https://firebasestorage.googleapis.com/v0/b/lungnuad-a547e.appspot.com/o/images%2F{{food.FOOD_IMG}}.jpg?alt=media&token=b934ec8f-234a-47cf-9d6a-4b5376fdb8d8">
+            </ion-label> 
+          </ion-item>      
+
+        <ion-label> 
+          ชื่อ : {{food.FOOD_NAME}}
+        </ion-label>
+
+      
+          
+          <ion-label> 
+           ราคา : {{food.FOOD_PRICE}}
+          </ion-label>
+
+          <ion-label>           
+              ประเภทอาหาร : {{food.FOOD_TYPE_NAME}}          
+          </ion-label>
+
+          <ion-label>           
+              รหัส : {{food.FOOD_ID}}          
+             </ion-label>
+
+    </ion-card>   
+
+  </ion-col>
+</ion-row>
+</ion-grid>
+
+
+    <!-- 
+  </ion-col>
+  </ion-row>
+  </ion-grid>
+-->
+</ion-content>
